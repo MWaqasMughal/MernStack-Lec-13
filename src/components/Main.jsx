@@ -1,8 +1,20 @@
-function Main(){
+import Card from "./Card";
+
+function Main({products}){
     return(
       <>
-      <main>
-        <p>This is the Main Area</p>
+      <main className=''>
+      <div className='row'>
+       {
+          products.map(product=>{
+            return(
+              <div key={product.id} className='col-md-3'>
+                <Card product={product}/>
+              </div>
+            )
+          })
+        }
+      </div>
       </main>
       </>
     )
